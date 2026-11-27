@@ -52,3 +52,5 @@ The difference-block criterion can be localized to earlier indices between $j/\s
 A prefix with at least $\sqrt M-O(M^{1/4})$ points constrains the count through $M^{5/4}$ to $O(\sqrt M)$. A weighted difference count quantifies the overlap required of neighboring blocks and explains why independent affine placement has too much overlap on average in the dense regime. [Proof, assumptions, and exact finite example](two-block-overlap.md)
 
 Interleaving $k$ Sidon sets yields an explicit union with lower counting exponent $1/(1+2^{1/k})$. Each colour has exponent $1/3$ in this construction. Run `python3 interlaced.py` to check a mixed-colour collision in the finite example. [Construction and proof](interlaced.md)
+
+The four interleaved blocks can be thinned to a single 241-element Sidon set, keeping at least 70.7% of each block. A two-block bound and an abstract matching example identify the limits of a repair argument based solely on pairing equal differences. Run `python3 paired_gaps.py` to reproduce the witness. [Proof and finite repair](paired-gaps.md)

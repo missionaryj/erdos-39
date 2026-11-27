@@ -41,9 +41,7 @@ For square roots in a single invertible class modulo an odd integer, the first r
 
 The analysis of Cilleruelo’s prime encoding isolates a limitation of changing digit positions and gives a continued-fraction test for mixed-level collisions. Run `python3 prime_layers.py` to reproduce the finite checks. [Prime-layer analysis](prime-layers.md)
 
-The [Left to Solve reduction draft](lean/Erdos39.erdos_39.R1.lean) separates constructing finite Sidon sets with one shared growth envelope from passing to an infinite set by compactness. The file proves only the conditional implication from its two stated hypotheses and awaits verification against the pinned Lean environment. The first hypothesis contains the outstanding finite construction.
-
-The submitted version of the reduction is tracked in [upstream PR 8688](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/8688). A [draft proof of the compactness hypothesis](lean/Erdos39.erdos_39.R1.H2.lean) adapts the finite-coordinate subsequence argument used for Erdős 28. It awaits kernel verification. The uniform finite construction remains open.
+The [Left to Solve reduction](lean/Erdos39.erdos_39.R1.lean) passed the Lean kernel and axiom audit and was merged with credit to **@missionaryj**. It proves the implication from two hypotheses to #39. H1 asks for a uniform finite construction and H2 transfers it to an infinite set by compactness. Our [local H2 draft](lean/Erdos39.erdos_39.R1.H2.lean) is separate from the upstream H2 submission by @ivillar. [Accepted reduction PR #8688](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/8688) · [H2 submission PR #9874](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/9874)
 
 Repacking the last interval increases the verified count from 346 to 357 with the same 208-point prefix. The revised bounds are **149–747 additions** in that interval. Run `python3 verify_repacking.py` for the independent checks. [Witness](data/repacked-witness.json) · [Bounds and finite-prefix extension lemma](notes.md#repacking-the-last-interval)
 
@@ -52,3 +50,5 @@ An equivalent formulation asks for finite blocks at successive scales whose inte
 The difference-block criterion can be localized to earlier indices between $j/\sqrt2$ and $j$. A single finite ruler also supplies compatible blocks for growing windows of nearby indices. Run `python3 block_spacing.py` to verify the spacing experiment. [Neighboring scales and the outstanding overlap estimate](neighboring-blocks.md)
 
 A prefix with at least $\sqrt M-O(M^{1/4})$ points constrains the count through $M^{5/4}$ to $O(\sqrt M)$. A weighted difference count quantifies the overlap required of neighboring blocks and explains why independent affine placement has too much overlap on average in the dense regime. [Proof, assumptions, and exact finite example](two-block-overlap.md)
+
+Interleaving $k$ Sidon sets yields an explicit union with lower counting exponent $1/(1+2^{1/k})$. Each colour has exponent $1/3$ in this construction. Run `python3 interlaced.py` to check a mixed-colour collision in the finite example. [Construction and proof](interlaced.md)

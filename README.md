@@ -38,3 +38,5 @@ A separate note constructs near-square-root-density random sets with any prescri
 For a construction that coordinates points by residue class, a difference count gives an exact intermediate-scale limit and a necessary condition for every candidate infinite solution. Two explicit integer lifts test the sharpness of the bound. Run `node residues.mjs` to verify their sums. [Residue-class bounds and constructions](residue-lifts.md)
 
 For square roots in a single invertible class modulo an odd integer, the first repeated sum of squares has a sharp asymptotic threshold. Run `python3 square_progressions.py` to reproduce the finite checks. [Threshold and proof](square-progressions.md)
+
+The analysis of Cilleruelo’s prime encoding isolates a limitation of changing digit positions and gives a continued-fraction test for mixed-level collisions. Run `python3 prime_layers.py` to reproduce the finite checks. [Prime-layer analysis](prime-layers.md)

@@ -54,3 +54,5 @@ A prefix with at least $\sqrt M-O(M^{1/4})$ points constrains the count through 
 Interleaving $k$ Sidon sets yields an explicit union with lower counting exponent $1/(1+2^{1/k})$. Each colour has exponent $1/3$ in this construction. Run `python3 interlaced.py` to check a mixed-colour collision in the finite example. [Construction and proof](interlaced.md)
 
 The four interleaved blocks can be thinned to a single 241-element Sidon set, keeping at least 70.7% of each block. A two-block bound and an abstract matching example identify the limits of a repair argument based solely on pairing equal differences. Run `python3 paired_gaps.py` to reproduce the witness. [Proof and finite repair](paired-gaps.md)
+
+Two quadratic integer rulers can require quadratically many cross-pairs to cover their conflicts, even though a secant-slope restriction keeps a quarter of each with disjoint differences. The earlier marked-ruler example has exact minimum cross-pair cover 317. Run `python3 slope_separation.py` for the finite checks. [Slope separation and proof](slope-separation.md) · [Cross-pair cover criterion](cross-pair-covers.md)

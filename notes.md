@@ -42,3 +42,21 @@ For a positive integer h let R(y) count representations y=x+i with x a new point
 The lower bound is Cauchy–Schwarz. On the right, a difference d<h contributes twice its overlap h−d. Summing over all possible d and subtracting the old differences gives the stated upper bound. This uses only internal differences of each set, so additional constraints may improve the bound.
 
 With h=4722 the verified witness prefix gives (4722t)² ≤ 791153(4722t+12424446). The largest admissible integer is 752. Direct evaluation at 752 and 753 verifies the cutoff. This leaves the optimum between 138 and 752 inclusive. A stronger bound or a denser extension for this one prefix would still leave the infinite problem open.
+
+### Repacking the last interval
+
+Fix exactly the same 208 old points. Starting from the 346-point greedy set, remove one point above the cutoff and try replacing it by several compatible points. To limit the search, for each possible new point intersect the sets of old endpoints involved in its collisions. A removal can make that point admissible only if it hits every collision. The C++ search also checks for repeated distances to the new point itself and rechecks compatibility between replacements. Seven improving rounds give 357 points in total. All 63,903 unordered sums, including doubles, were independently verified.
+
+The upper bound also improves by preserving the integer values of the shifted-interval counts. Write $S=L+h-1$ and $th=qS+r$ with $0\le r<S$. Among $S$ nonnegative integer occupancies with sum $th$, the smallest possible ordered-overlap count is
+
+$$
+\sum_y R(y)(R(y)-1)\ \ge\ S q(q-1)+2qr .
+$$
+
+Moving one unit from a larger occupancy to a smaller one reduces the sum whenever they differ by at least two. At the minimum there are $r$ occupancies of size $q+1$ and the rest have size $q$. The earlier difference argument gives the upper bound $h(h-1)-2\sum_{d\in D,d<h}(h-d)$ on the same ordered-overlap count.
+
+For $h=4657$, an extension of size 748 requires at least 12,045,728 ordered overlaps, exceeding the available 12,045,692. Any larger extension would contain one of size 748. This gives the updated bounds of **149 to 747 additions**, inclusive, for this prefix and interval. Run `python3 verify_repacking.py` to check both certificates. To reproduce the construction with GNU C++20, compile `g++ -O3 -std=c++20 repack.cpp -o /tmp/repack39` and run `/tmp/repack39 < data/witness.json`.
+
+### What a fixed prefix can decide
+
+If a solution to problem 39 exists, then every specified finite Sidon prefix can begin a solution. Let the desired prefix be $B\subseteq[1,M]$ and let $A$ be a hypothetical solution on positive integers. Pick an integer $d>2M$ and take $C=B\cup dA$. Its prefix through $M$ is exactly $B$. Sums of two old elements are at most $2M$, and every sum involving a new element is larger. Two new elements sum to zero modulo $d$, while a mixed sum has residue $b\in B$, which identifies its old summand. Uniqueness within $A$ handles sums of two new elements. Finally $C(N)\ge A(\lfloor N/d\rfloor)$, preserving every required exponent because $d$ is fixed. Consequently, failure to extend a particular finite prefix at the *next* checkpoint cannot alone disprove the conjecture. A negative argument must force failures arbitrarily far out in a way incompatible with the asymptotic bounds.

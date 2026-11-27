@@ -31,7 +31,7 @@ theorem main : H1 → H2 → type_of% @Erdos39.erdos_39 := by
   apply Asymptotics.IsBigO.of_bound'
   apply Filter.Eventually.of_forall
   intro n
-  simp only [Real.norm_eq_abs, Nat.abs_cast]
+  simp only [Real.norm_natCast]
   exact_mod_cast hcount n
 
 end OMA.R_Erdos39_erdos_39_R1

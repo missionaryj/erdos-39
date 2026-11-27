@@ -42,3 +42,5 @@ For square roots in a single invertible class modulo an odd integer, the first r
 The analysis of Cilleruelo’s prime encoding isolates a limitation of changing digit positions and gives a continued-fraction test for mixed-level collisions. Run `python3 prime_layers.py` to reproduce the finite checks. [Prime-layer analysis](prime-layers.md)
 
 The [Left to Solve reduction draft](lean/Erdos39.erdos_39.R1.lean) separates constructing finite Sidon sets with one shared growth envelope from passing to an infinite set by compactness. The file proves only the conditional implication from its two stated hypotheses and awaits verification against the pinned Lean environment. The first hypothesis contains the outstanding finite construction.
+
+The submitted version of the reduction is tracked in [upstream PR 8688](https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/8688). A [draft proof of the compactness hypothesis](lean/Erdos39.erdos_39.R1.H2.lean) adapts the finite-coordinate subsequence argument used for Erdős 28. It awaits kernel verification. The uniform finite construction remains open.

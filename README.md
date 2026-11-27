@@ -32,3 +32,5 @@ The default integer run independently checks every unordered pair sum in the sto
 The 346 integers have 59,685 distinct positive differences and 60,031 distinct unordered sums. In the final interval the algorithm retained 138 mutually compatible additions. For this exact prefix the translated-interval inequality gives an upper bound of 752 additions. The maximum is unknown. These finite measurements do not determine the asymptotic exponent.
 
 [Full witness](data/witness.json) · [Proofs, assumptions and limitations](notes.md)
+
+A separate note constructs near-square-root-density random sets with any prescribed diverging cap on sum representations. It derives a bound on how many points can survive if collisions are repaired by deletions and local moves. [Random constructions and repair bounds](random-repair.md)

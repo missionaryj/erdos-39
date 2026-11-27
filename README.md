@@ -48,3 +48,5 @@ The submitted version of the reduction is tracked in [upstream PR 8688](https://
 Repacking the last interval increases the verified count from 346 to 357 with the same 208-point prefix. The revised bounds are **149–747 additions** in that interval. Run `python3 verify_repacking.py` for the independent checks. [Witness](data/repacked-witness.json) · [Bounds and finite-prefix extension lemma](notes.md#repacking-the-last-interval)
 
 An equivalent formulation asks for finite blocks at successive scales whose internal positive differences are all distinct across the family. A binary encoding combines such blocks into one infinite Sidon set at the required exponent. Run `python3 difference_blocks.py` for the finite checks. [Criterion, construction at separated scales, and unresolved step](difference-blocks.md)
+
+The difference-block criterion can be localized to earlier indices between $j/\sqrt2$ and $j$. A single finite ruler also supplies compatible blocks for growing windows of nearby indices. Run `python3 block_spacing.py` to verify the spacing experiment. [Neighboring scales and the outstanding overlap estimate](neighboring-blocks.md)

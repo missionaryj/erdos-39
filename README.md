@@ -40,3 +40,5 @@ For a construction that coordinates points by residue class, a difference count 
 For square roots in a single invertible class modulo an odd integer, the first repeated sum of squares has a sharp asymptotic threshold. Run `python3 square_progressions.py` to reproduce the finite checks. [Threshold and proof](square-progressions.md)
 
 The analysis of Cilleruelo’s prime encoding isolates a limitation of changing digit positions and gives a continued-fraction test for mixed-level collisions. Run `python3 prime_layers.py` to reproduce the finite checks. [Prime-layer analysis](prime-layers.md)
+
+The [Left to Solve reduction draft](lean/Erdos39.erdos_39.R1.lean) separates constructing finite Sidon sets with one shared growth envelope from passing to an infinite set by compactness. The file proves only the conditional implication from its two stated hypotheses and awaits verification against the pinned Lean environment. The first hypothesis contains the outstanding finite construction.

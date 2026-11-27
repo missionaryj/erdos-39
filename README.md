@@ -36,3 +36,5 @@ The 346 integers have 59,685 distinct positive differences and 60,031 distinct u
 A separate note constructs near-square-root-density random sets with any prescribed diverging cap on sum representations. It derives a bound on how many points can survive if collisions are repaired by deletions and local moves. [Random constructions and repair bounds](random-repair.md)
 
 For a construction that coordinates points by residue class, a difference count gives an exact intermediate-scale limit and a necessary condition for every candidate infinite solution. Two explicit integer lifts test the sharpness of the bound. Run `node residues.mjs` to verify their sums. [Residue-class bounds and constructions](residue-lifts.md)
+
+For square roots in a single invertible class modulo an odd integer, the first repeated sum of squares has a sharp asymptotic threshold. Run `python3 square_progressions.py` to reproduce the finite checks. [Threshold and proof](square-progressions.md)

@@ -1,0 +1,34 @@
+# Erdős problem 39
+
+Research initiated by **@missionaryj**. Mathematical exploration, software and drafting assisted by OpenAI Codex. This repository records partial results on the dense infinite Sidon set problem. The question remains open in the cited literature.
+
+A Sidon set has distinct sums for all unordered pairs, including pairs with equal entries. Does there exist one infinite Sidon set of positive integers whose count through N is at least a constant (depending on ε) times N^(1/2−ε) for every ε>0 at every sufficiently large N? Cilleruelo constructed a sequence with counting exponent √2−1+o(1), following Ruzsa’s earlier existence result. [Problem and bibliography](https://www.erdosproblems.com/39) · [Cilleruelo’s paper](https://arxiv.org/abs/1209.0326)
+
+## Reproduce the experiments
+
+Use Node.js 18 or later. No packages are required.
+
+```sh
+node fields.mjs
+node experiments.mjs
+node experiments.mjs --generate
+node experiments.mjs --search-prefix
+```
+
+The default integer run independently checks every unordered pair sum in the stored witness and computes two upper bounds for extending its 208-point prefix. The generate option reconstructs and writes the witness from the frozen 46-point prefix. The search-prefix option reruns the 3,000 seeded trials that selected that prefix. The field script exhausts the nine-input test and enumerates the quadratic-extension blocks.
+
+| N | Points ≤ N | Individually admissible candidates above previous checkpoint before greedy extension |
+|---:|---:|---:|
+| 16 | 3 | — |
+| 64 | 6 | — |
+| 256 | 12 | — |
+| 1,024 | 25 | — |
+| 4,096 | 46 | — |
+| 16,384 | 74 | 9,200 |
+| 65,536 | 123 | 37,759 |
+| 262,144 | 208 | 149,510 |
+| 1,048,576 | 346 | 585,157 |
+
+The 346 integers have 59,685 distinct positive differences and 60,031 distinct unordered sums. In the final interval the algorithm retained 138 mutually compatible additions. For this exact prefix the translated-interval inequality gives an upper bound of 752 additions. The maximum is unknown. These finite measurements do not determine the asymptotic exponent.
+
+[Full witness](data/witness.json) · [Proofs, assumptions and limitations](notes.md)

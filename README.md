@@ -58,3 +58,5 @@ The four interleaved blocks can be thinned to a single 241-element Sidon set, ke
 Two quadratic integer rulers can require quadratically many cross-pairs to cover their conflicts, even though a secant-slope restriction keeps a quarter of each with disjoint differences. The earlier marked-ruler example has exact minimum cross-pair cover 317. Run `python3 slope_separation.py` for the finite checks. [Slope separation and proof](slope-separation.md) · [Cross-pair cover criterion](cross-pair-covers.md)
 
 A linear system on the endpoints of shared differences gives a sufficient criterion that can compare each pair of levels in its own prime field. The proof allows repeated thinning after earlier repairs. Run `python3 endpoint_labels.py` to check all solutions of the system for the earlier marked rulers in twelve characteristics. [Endpoint labels and simultaneous criterion](endpoint-labels.md)
+
+For the quadratic ruler modulo a fixed odd prime power $P$, the largest Sidon subset has order $P^{2/3}$. An explicit three-digit construction attains that order. Run `python3 prime_power_rulers.py` for the modular checks. [Construction and upper bound](prime-power-rulers.md)

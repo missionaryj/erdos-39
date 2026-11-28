@@ -74,3 +74,7 @@ For the six-coordinate construction, retaining an intact box of the early parabo
 For independent thinning of the earlier degree-two parabola followed by optimal selection from the degree-three parabola, the sharp common exponent at the two prescribed horizons is $3/7$ with high probability. The upper bound also applies to ordinary integer gaps in the specified digit lift. Run `python3 fiber_thinning.py` for four finite checks. [Tradeoff, chord calculation and exact small optima](fiber-thinning.md)
 
 For the same two parabolas, a coordinated choice on two parallel lines has an exact linear repair cost. A uniformly sampled earlier subset of size $1\ll k\ll p^{3/2}$ requires $(16/81+o(1))\binom{k}{2}$ later deletions in the integer lift with high probability. For another explicit pair of lines the same earlier marks cost $p^2+O(p)$ later deletions modulo the field and at most $2p-2$ as integers. [Proof and exact checks](coordinated-repair.md)
+
+Any integer Sidon extension of the $p$-mark ruler $2px+[x^2]_p$ has only $O(p^{7/5})$ marks in every interval of $p^3$ positions. A shifted-box inequality gives estimates for arbitrary near-full digit boxes throughout the subquadratic range. [Proof and exact finite bounds](digit-windows.md)
+
+For a single parabola over $\mathbb F_{q^{2d}}$, one affine digit order simultaneously attains the exact maximal prefix counts in dimensions $2d$ through $4d$. The maximum at dimension $3d$ is $2q^d-1$. [Extremal counts, construction and verification](affine-prefixes.md)

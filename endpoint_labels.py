@@ -5,12 +5,11 @@ from interlaced import marked
 from paired_gaps import gap_map
 
 
-def endpoint_equations(first, second, prime):
-    left, right = gap_map(first), gap_map(second)
+def reduce_equations(equations, prime):
+    """Return normalized pivot rows over the chosen prime field."""
     pivots = {}
-    for gap in sorted(left.keys() & right.keys()):
-        row = {v: 1 for v in left[gap]}
-        row.update({len(first) + v: prime - 1 for v in right[gap]})
+    for equation in equations:
+        row = {v: a % prime for v, a in equation.items() if a % prime}
         while row:
             lead = min(row)
             factor = row[lead]
@@ -25,6 +24,18 @@ def endpoint_equations(first, second, prime):
                 else:
                     row.pop(v, None)
     return pivots
+
+
+def endpoint_equations(first, second, prime):
+    left, right = gap_map(first), gap_map(second)
+
+    def equations():
+        for gap in sorted(left.keys() & right.keys()):
+            row = {v: 1 for v in left[gap]}
+            row.update({len(first) + v: -1 for v in right[gap]})
+            yield row
+
+    return reduce_equations(equations(), prime)
 
 
 def coordinate_functionals(size, pivots, prime):

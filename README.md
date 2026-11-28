@@ -62,3 +62,5 @@ A linear system on the endpoints of shared differences gives a sufficient criter
 For the quadratic ruler modulo a fixed odd prime power $P$, the largest Sidon subset has order $P^{2/3}$. An explicit three-digit construction attains that order. Run `python3 prime_power_rulers.py` for the modular checks. [Construction and upper bound](prime-power-rulers.md)
 
 For full quadratic graphs over different field degrees, bounded-degree endpoint labels capture only a vanishing fraction of shared modular differences when the larger degree lies strictly between the smaller degree and its double. The proof also gives integer lifts at polynomially different horizons. Run `python3 field_bridge.py` for the exact small-field systems. [Bound and proof](field-bridge.md)
+
+For a product of two finite rulers with a prescribed first-row prefix, an exact extension formula follows from four-cycle-free bipartite graphs. A point-line construction gives a 388-mark example with 52 prescribed early marks. Run `python3 incidence_extension.py` for the exhaustive small optimum and the independent sum checks. [Extension formula and two-horizon bound](incidence-extension.md)

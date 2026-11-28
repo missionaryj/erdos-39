@@ -78,3 +78,5 @@ For the same two parabolas, a coordinated choice on two parallel lines has an ex
 Any integer Sidon extension of the $p$-mark ruler $2px+[x^2]_p$ has only $O(p^{7/5})$ marks in every interval of $p^3$ positions. A shifted-box inequality gives estimates for arbitrary near-full digit boxes throughout the subquadratic range. [Proof and exact finite bounds](digit-windows.md)
 
 For a single parabola over $\mathbb F_{q^{2d}}$, one affine digit order simultaneously attains the exact maximal prefix counts in dimensions $2d$ through $4d$. The maximum at dimension $3d$ is $2q^d-1$. [Extremal counts, construction and verification](affine-prefixes.md)
+
+An elliptic quadric gives square-root counts at the $p^4$ and $p^6$ horizons with all mixed sums unique, no shared early and later internal differences, at most two representations per nonzero difference, and at most four per unordered sum. At $p=17$ a finite repair retains all 85 early marks and 694 later ones with exact Sidon uniqueness. [Construction, rectangle criterion and verifier](cone-blocks.md)

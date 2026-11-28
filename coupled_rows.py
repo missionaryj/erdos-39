@@ -5,7 +5,7 @@ from itertools import product
 from field_bridge import square
 
 
-def check(prime, nonsquare):
+def graph(prime, nonsquare):
     modulus = (-nonsquare, 0)
     elements = list(product(range(prime), repeat=2))
     squares = {x: square(x, modulus, prime) for x in elements}
@@ -19,6 +19,11 @@ def check(prime, nonsquare):
             v = ((x2[0] + b + alpha[0]*b*b) % prime, (x2[1] + alpha[1]*b*b) % prime)
             w = tuple(b*a % prime for a in x)
             points.append(x+v+w+(b,))
+    return points, alpha
+
+
+def check(prime, nonsquare):
+    points, alpha = graph(prime, nonsquare)
     projected = Counter()
     full = set()
     for a in points:
